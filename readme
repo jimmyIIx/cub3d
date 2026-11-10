@@ -1,0 +1,30 @@
+# CUB3D
+
+Jeu d'exploration 3D construit avec le raycasting et la librairie graphique MLX42. Naviguez dans un labyrinthe texturisé rendu en temps réel à partir d'une carte 2D.
+
+## Système de raycasting
+Le raycasting est une technique 3D qui transforme une vue 2D en perspective 3D:
+- Traçage de rayons depuis la caméra du joueur
+- Calcul des intersections avec les murs
+- Détermination de la hauteur des murs selon la distance
+- Application de textures pour chaque colonne
+
+## Fonctionnalités principales
+- **Moteur de raycasting** - Rendu 3D en temps réel depuis plan 2D
+- **Textures murales** - Affichage de textures différentes pour chaque face
+- **Rendu de sprites** - Affichage d'éléments visuels additionnels
+- **Contrôles de joueur** - Mouvements fluides en première personne
+  - WASD/Flèches pour se déplacer
+  - Souris/flèches pour tourner la vue
+- **Parsing de cartes** - Lecture de fichiers .cub définissant le niveau
+- **Gestion des événements** - Entrées clavier et fermeture window
+
+## Format du fichier de carte (.cub)
+Définit les paramètres du jeu:
+- Résolution (R)
+- Textures (NO, SO, EA, WE)
+- Couleur du sol et du plafond (F, C)
+- Layout du labyrinthe (0 = espace, 1 = mur)
+
+## Technique d'implémentation
+Le moteur utilise DDA (Digital Differential Analyzer) ou similar pour tracer les rayons et calculer les distances, permettant un rendu fluide sans bibliothèques 3D complexes.
